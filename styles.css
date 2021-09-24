@@ -8,6 +8,7 @@ body {
     padding: 0px;
     margin: 0px;
     overflow-y: auto;
+    font-family: 'Play', sans-serif;
 }
 
 .upLogoImage {
@@ -27,7 +28,7 @@ body {
 
 .upLogo {
     justify-content: center;
-    display: flex;
+    display:flex;
     background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;
     padding: 7px;
     height: 170px;
@@ -40,9 +41,42 @@ body {
 .mainText{
     text-align: center;
 }
-
-
-
+.sBlocks {
+    /*display: flex;
+    justify-content:space-around;
+    align-items:center;
+    */
+    display: grid;
+    gap: 10px;
+    grid-auto-flow: dense;
+    grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
+    /*grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);*/
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.sBlock {
+    min-width: 300px;
+    width: 300px;
+    min-height: 200px;
+    height: 200px;
+    /*background: linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
+    background-color: hsl(246, 36%, 10%);
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 40px;
+    padding: 20px;
+    margin: 10px;
+    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out;
+    color: lightgray;
+}
+    .sBlock:hover {
+        background-color: hsl(246, 36%, 20%);
+        /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
+        transform: translateY(-10px);
+        cursor: pointer;
+        color: whitesmoke;
+        border-radius: 30px;
+    }
 body::-webkit-scrollbar {
     width: 10px;
 }
