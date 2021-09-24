@@ -2,9 +2,12 @@ body {
     /*background-color: hsl(246, 36%, 7%);*/
     background-repeat: no-repeat;
     /*background: hsl(246, 36%, 7%) -webkit-gradient(linear, left top, left bottom, color-stop(0, hsl(246, 36%, 20%)), color-stop(1, hsl(246, 36%, 7%))) no-repeat;*/
-    background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;
-    /*color: whitesmoke;*/
+    /*background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
+    background: hsl(246, 36%, 7%);
     color: whitesmoke;
+    padding: 0px;
+    margin: 0px;
+    overflow-y: auto;
 }
 
 .upLogoImage {
@@ -14,16 +17,45 @@ body {
     width: 300px;
     margin-top: -20px;
 }
-.upLogo {
-    justify-content: center;
-    display: flex;
-}
-.upLogoSection {
 
-}
 .upLogoText {
     padding-top: 120px;
     margin-left: -80px;
     font-family: 'Play', sans-serif;
     /*font-family: 'Pacifico', cursive;*/
 }
+
+.upLogo {
+    justify-content: center;
+    display: flex;
+    background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;
+    padding: 7px;
+    height: 170px;
+}
+
+.upLogoSection {
+
+}
+
+.mainText{
+    text-align: center;
+}
+
+
+
+body::-webkit-scrollbar {
+    width: 10px;
+}
+body::-webkit-scrollbar-track {
+    background-color: hsl(246, 36%, 10%);
+}
+body::-webkit-scrollbar-thumb {
+    /*background-image: linear-gradient(180deg, #D0368A 0%, #708AD4 99%);*/
+    background-image: linear-gradient(180deg, hsl(257, 47%, 57%) 0%, hsl(246, 42%, 53%) 99%);
+    border-radius: 2px;
+    /*transition: 10s background-image; don't work :( */ 
+}
+body::-webkit-scrollbar-thumb:hover {
+    background-image: linear-gradient(180deg, hsl(256, 34%, 47%) 0%, hsl(246, 42%, 43%) 99%);
+}
+    
