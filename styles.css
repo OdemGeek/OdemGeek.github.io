@@ -55,10 +55,17 @@ body {
     margin-left: 10px;
     margin-right: 20px;
 }
+.sBlock:hover {
+    background-color: hsl(246, 36%, 20%);
+    /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
+    transform: translateY(-10px);
+    cursor: pointer;
+    color: whitesmoke;
+    border-radius: 30px;
+}
 .sBlock {
-    min-width: 300px;
+    justify-self: center;
     width: 300px;
-    min-height: 200px;
     height: 200px;
     /*background: linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     background-color: hsl(246, 36%, 10%);
@@ -69,14 +76,7 @@ body {
     transition: background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out;
     color: lightgray;
 }
-    .sBlock:hover {
-        background-color: hsl(246, 36%, 20%);
-        /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
-        transform: translateY(-10px);
-        cursor: pointer;
-        color: whitesmoke;
-        border-radius: 30px;
-    }
+    
 body::-webkit-scrollbar {
     width: 10px;
 }
