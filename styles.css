@@ -1,13 +1,20 @@
+/*color pallete:
+    maybe: #2c1e47
+    amethyst: hsl(246, 36%, 7%)
+    amethyst2: hsl(257, 35%, 10%)
+*/
+
 body {
     /*background-color: hsl(246, 36%, 7%);*/
     background-repeat: no-repeat;
     /*background: hsl(246, 36%, 7%) -webkit-gradient(linear, left top, left bottom, color-stop(0, hsl(246, 36%, 20%)), color-stop(1, hsl(246, 36%, 7%))) no-repeat;*/
     /*background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
-    background: hsl(246, 36%, 7%);
+    /*background: hsl(246, 36%, 7%);*/
+    background: linear-gradient(270deg, hsl(257, 35%, 10%), hsl(256, 36%, 14%));
     color: whitesmoke;
     padding: 0px;
     margin: 0px;
-    overflow-y: auto;
+    overflow-y: scroll;
     font-family: 'Play', sans-serif;
 }
 
@@ -28,8 +35,9 @@ body {
 
 .upLogo {
     justify-content: center;
-    display:flex;
-    background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;
+    display: flex;
+    box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
+    /*background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     padding: 7px;
     height: 170px;
 }
@@ -50,30 +58,40 @@ body {
     gap: 10px;
     grid-auto-flow: dense;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
-    /*grid-gap: 10px;
-    grid-auto-rows: minmax(100px, auto);*/
+    /*grid-gap: 10px;*/
+    grid-auto-rows: 260px;
     margin-left: 10px;
     margin-right: 20px;
 }
 .sBlock:hover {
-    background-color: hsl(246, 36%, 20%);
+    background-color: hsl(246, 36%, 23%);
     /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     transform: translateY(-10px);
     cursor: pointer;
     color: whitesmoke;
-    border-radius: 30px;
+    border-radius: 12px;
+}
+.sBlock:focus {
+    box-shadow: 0 0 0 4px hsl(246, 36%, 30%), 7px 7px 10px rgba(0, 0, 0, 0.3);
+    transform: translateY(-10px);
+    color: whitesmoke;
+    border-radius: 10px;
+    height: 500px;
+    /*grid-area: span 3;*/
+    
 }
 .sBlock {
     justify-self: center;
     width: 300px;
     height: 200px;
+    display: flex;
     /*background: linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
-    background-color: hsl(246, 36%, 10%);
+    background-color: hsl(246, 36%, 16%);
     box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.3);
-    border-radius: 40px;
+    border-radius: 20px;
     padding: 20px;
     margin: 10px;
-    transition: background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out;
+    transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out;
     color: lightgray;
 }
     
