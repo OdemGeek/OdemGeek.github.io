@@ -49,6 +49,10 @@ body {
 .mainText{
     text-align: center;
 }
+.NameText {
+    text-align: center;
+    font-size: 20px;
+}
 .sBlocks {
     /*display: flex;
     justify-content:space-around;
@@ -64,25 +68,30 @@ body {
     margin-right: 20px;
 }
 .sBlock:hover {
+    overflow: hidden;
     background-color: hsl(246, 36%, 23%);
     /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
-    transform: translateY(-10px);
     cursor: pointer;
     color: whitesmoke;
     border-radius: 12px;
 }
 .sBlock:focus {
+    overflow: hidden;
     box-shadow: 0 0 0 4px hsl(246, 36%, 30%), 7px 7px 10px rgba(0, 0, 0, 0.3), inset 7px 7px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    z-index: 1;
     transform: translateY(-10px);
     color: whitesmoke;
     border-radius: 10px;
-    height: 500px;
-    /*grid-area: span 3;*/
+    height: 350px;
 }
 .sBlock {
+
+    overflow: hidden;
     justify-self: center;
     width: 300px;
     height: 200px;
+    transform: translateY(0px);
     display: flex;
     /*background: linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     background-color: hsl(246, 36%, 16%);
@@ -93,6 +102,31 @@ body {
     transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out;
     color: lightgray;
 }
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+span.ripple {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    background-color: hsla(256, 98%, 73%, 0.2);
+}
+
+.bottomShadow {
+    margin-top: 43px;
+    min-height: 20px;
+    box-shadow: 0px -7px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+
     
 body::-webkit-scrollbar {
     width: 10px;
