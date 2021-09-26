@@ -85,7 +85,7 @@ body {
     border-radius: 10px;
     height: 350px;
     outline: none;
-    transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 0s ease-in-out 0ms;
+    transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 0s ease-in-out;
 }
 .sBlock {
     z-index: 0;
@@ -101,7 +101,7 @@ body {
     border-radius: 20px;
     padding: 20px;
     margin: 10px;
-    transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 200ms ease-in-out 0ms;
+    transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 200ms ease-in-out;
     color: lightgray;
 }
 @keyframes ripple {
