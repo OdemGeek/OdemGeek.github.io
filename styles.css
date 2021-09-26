@@ -84,6 +84,7 @@ body {
     color: whitesmoke;
     border-radius: 10px;
     height: 350px;
+    outline: none;
 }
 .sBlock {
 
