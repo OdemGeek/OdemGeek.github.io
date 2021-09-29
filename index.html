@@ -17,6 +17,57 @@
     <title>Odem developer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var language;
+        function getLanguage() {
+            (localStorage.getItem('language') == null) ? localStorage.setItem('language', 'en') : false;
+            alert("Work1");
+            $.ajax({
+                url: '/language/' + localStorage.getItem('language') + '.json',
+                dataType: 'json', async: false, dataType: 'json',
+                success: function (lang) { language = lang; alert("Work4"); },
+                error: function (jqXHR, exception) {
+                    var msg = '';
+                    if (jqXHR.status === 0) {
+                        msg = 'Not connect.\n Verify Network.';
+                    } else if (jqXHR.status == 404) {
+                        msg = 'Requested page not found. [404]';
+                    } else if (jqXHR.status == 500) {
+                        msg = 'Internal Server Error [500].';
+                    } else if (exception === 'parsererror') {
+                        msg = 'Requested JSON parse failed.';
+                    } else if (exception === 'timeout') {
+                        msg = 'Time out error.';
+                    } else if (exception === 'abort') {
+                        msg = 'Ajax request aborted.';
+                    } else {
+                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
+                    }
+                    //$('#post').html(msg);
+                    alert('error: ' + msg);
+                },
+            });
+            alert("Work5");
+        }
+
+        window.onload = function () {
+            getLanguage();
+        }
+
+        function setLanguage(lang) {
+
+            localStorage.setItem('language', lang);
+            //$('#upLogoText').text(language.underLogoText);
+            //document.getElementById("upLogoText").innerHTML = underLogoText.date;
+            alert("Work2");
+        }
+        document.ready(function () {
+            $('#upLogoText').text(language.underLogoText);
+            //document.getElementById("upLogoText").innerHTML = underLogoText.date;
+            alert("Work3");
+        });
+    </script>
 </head>
 <body>
     <div class="upLogo">
@@ -24,56 +75,62 @@
             <img class="upLogoImage" src="images/odemLogo.png">
         </div>
         <div class="upLogoSection">
-            <p class="upLogoText">Just a programmer.</p>
+            <p id="upLogoText" class="upLogoText">Just a programmer.</p>
         </div>
     </div>
     <p class="NameText"><b>My projects</b></p>
-    <div class="sBlocks">
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                There is some text. So you can read this, or not. I don't care cuz it's just for test.
-                So what i supposed to write over there? Nothing.
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
-        </div>
-        <div tabindex="0" data-yoffset="-10" class="sBlock">
-            <p>
-                It's second useless block, which was created only for testing this block!
-            </p>
+    <div class="myProjects">
+        <div class="sBlocks">
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    There is some text. So you can read this, or not. I don't care cuz it's just for test.
+                    So what i supposed to write over there? Nothing.
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <p>
+                    It's second useless block, which was created only for testing this block!
+                </p>
+            </div>
         </div>
     </div>
-    <div class="bottomShadow">
-        
+    
+    <div class="bottomShadow"></div>
+    <div class="footer">
+        <p align="center">Just some text in the footer</p>
+        <a href="#" onclick="setLanguage('en')">English</a>
+        <a href="#" onclick="setLanguage('ru')">Russian</a>
     </div>
     
 </body>
