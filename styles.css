@@ -21,6 +21,42 @@ body {
     height: 100%;
 }
 
+#helpPanel {
+    position: fixed;
+    margin: 0px;
+    height: 40px;
+    width: 100%;
+    background-color: hsla(257, 35%, 16%, 0.5);
+    border-right: solid 2px hsla(246, 36%, 55%, 0.3);
+    z-index: 100;
+    backdrop-filter: blur(1.5rem);
+    transition: width 250ms ease-out;
+    overflow: hidden;
+}
+.helpPanelHidden {
+    animation: hideUpPanel 250ms ease-out forwards;
+}
+@keyframes hideUpPanel {
+    from {
+        transform: translateY(0px);
+    }
+    to {
+        transform: translateY(-70px);
+    }
+}
+
+.helpPanelShown {
+    animation: showUpPanel 250ms ease-out forwards;
+}
+@keyframes showUpPanel {
+    from {
+        transform: translateY(-70px);
+    }
+    to {
+        transform: translateY(0px);
+    }
+}
+
 .upLogoImage {
     display: block;
     margin-left: auto;
@@ -200,11 +236,31 @@ span.ripple {
     /*margin-top: -200px;*/
 }
 
+#link {
+    color: hsl(180, 78%, 48%);
+    float: right;
+    cursor: pointer;
+}
+#link:hover {
+    text-decoration: underline;
+}
 
 
 
+/*custom selection color*/
+::-moz-selection { /* Code for Firefox */
+    /*color: red;*/
+    background: hsl(180, 100%, 23%);
+}
 
-    
+::selection {
+    /*color: red;*/
+    background: hsl(180, 100%, 23%);
+}
+
+
+
+/*custom scrollbar*/
 body::-webkit-scrollbar {
     width: 10px;
 }

@@ -29,5 +29,18 @@ window.onload = function () {
     
 }
 
+window.addEventListener('scroll',function (e) {
+    var el = document.getElementById('helpPanel');
+    var style = getComputedStyle(el);
+    var isPositionFixed = (style.getPropertyValue('position') == 'fixed');
 
+    if (window.scrollY < 200 && isPositionFixed) {
+        //el.style.display = 'none';
+        el.className = 'helpPanelHidden';
+    }
+    else {
+        //el.style.display = 'inherit';
+        el.className = 'helpPanelShown';
+    }
+});
 
