@@ -1,6 +1,6 @@
 function createRipple(event) {
     const button = event.currentTarget;
-   
+    if (button.id == 'fullScreenBlock') return;
     const circle = document.createElement("span");
     const diameter = Math.max(button.clientWidth, button.clientHeight);
     const radius = diameter / 2;
@@ -28,6 +28,15 @@ window.onload = function () {
         button.addEventListener("click", createRipple);
     }
     
+}
+
+var isFullScreen = false;
+
+function onReadMoreClick() {
+    var elem = document.activeElement;
+    elem.focus()
+    //elem.className = 'fullScreenBlock';
+    elem.setAttribute("id", "fullScreenBlock");
 }
 
 
