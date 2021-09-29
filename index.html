@@ -22,11 +22,10 @@
         var language;
         function getLanguage() {
             (localStorage.getItem('language') == null) ? localStorage.setItem('language', 'en') : false;
-            alert("Work1");
             $.ajax({
                 url: '/language/' + localStorage.getItem('language') + '.json',
                 dataType: 'json', async: false, dataType: 'json',
-                success: function (lang) { language = lang; alert("Work4"); },
+                success: function (lang) { language = lang; },
                 error: function (jqXHR, exception) {
                     var msg = '';
                     if (jqXHR.status === 0) {
@@ -48,7 +47,6 @@
                     alert('error: ' + msg);
                 },
             });
-            alert("Work5");
         }
 
         window.onload = function () {
@@ -58,9 +56,9 @@
         function setLanguage(lang) {
 
             localStorage.setItem('language', lang);
-            //$('#upLogoText').text(language.underLogoText);
+            $('#upLogoText').text(language.underLogoText);
             //document.getElementById("upLogoText").innerHTML = underLogoText.date;
-            alert("Work2");
+            alert("Language: " + lang);
         }
         document.ready(function () {
             $('#upLogoText').text(language.underLogoText);
