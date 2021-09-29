@@ -68,6 +68,7 @@ body {
     grid-auto-rows: 260px;
     margin-left: 10px;
     margin-right: 10px;
+    align-content:flex-end;
 }
 .sBlock:hover {
     overflow: hidden;
@@ -85,10 +86,34 @@ body {
     transform: translateY(-10px);
     color: whitesmoke;
     border-radius: 10px;
-    height: 350px;
+    height: var(--f-height);
     outline: none;
     transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 0s ease-in-out;
 }
+.sBlock:after {
+    margin-left: 0px;
+    position: absolute;
+    transform: translateX(-20px);
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to top, hsla(246, 36%, 16%, 1) 5%, hsla(246, 36%, 16%, 0) 50% );
+    pointer-events: none; /* so the text is still selectable */
+}
+
+.sBlock:focus:after {
+    margin-left: 0px;
+    position: absolute;
+    transform: translateX(-20px);
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    content: "";
+    background: linear-gradient(to top, hsla(246, 36%, 16%, 1) 0%, hsla(246, 36%, 16%, 0) 0% );
+    pointer-events: none; /* so the text is still selectable */
+} 
+
 .sBlock {
     z-index: 0;
     overflow: hidden;
@@ -105,7 +130,34 @@ body {
     margin: 10px;
     transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 200ms ease-in-out;
     color: lightgray;
+    flex-flow: column;
+}   
+
+.sBlockName {
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 3px;
 }
+
+.sBlockImagesUp {
+    text-align: center;
+}
+
+.sBlockSmallImage {
+    transform: translateY(5px);
+    margin-bottom: 0px;
+    justify-self: center;
+}
+
+.sBlockText {
+    font-size: 16px;
+}
+
+.sBlockUpSide {
+    flex-flow: initial;
+    align-self: center;
+}
+
 @keyframes ripple {
     to {
         transform: scale(4);
@@ -123,8 +175,13 @@ span.ripple {
 
 .bottomShadow {
     margin-top: 43px;
-    min-height: 20px;
+    min-height: 10px;
     box-shadow: 0px -7px 10px rgba(0, 0, 0, 0.3);
+}
+.topShadow {
+    margin-bottom: 43px;
+    min-height: 10px;
+    box-shadow: 0px 7px 10px rgba(0, 0, 0, 0.3);
 }
 
 .footer {

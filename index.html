@@ -20,71 +20,7 @@
     <title>Odem developer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script>
-        var language;
-        UTF8 = {
-            encode: function (s) {
-                for (var c, i = -1, l = (s = s.split("")).length, o = String.fromCharCode; ++i < l;
-                    s[i] = (c = s[i].charCodeAt(0)) >= 127 ? o(0xc0 | (c >>> 6)) + o(0x80 | (c & 0x3f)) : s[i]
-                );
-                return s.join("");
-            },
-            decode: function (s) {
-                for (var a, b, i = -1, l = (s = s.split("")).length, o = String.fromCharCode, c = "charCodeAt"; ++i < l;
-                    ((a = s[i][c](0)) & 0x80) &&
-                    (s[i] = (a & 0xfc) == 0xc0 && ((b = s[i + 1][c](0)) & 0xc0) == 0x80 ?
-                        o(((a & 0x03) << 6) + (b & 0x3f)) : o(128), s[++i] = "")
-                );
-                return s.join("");
-            }
-        };
-        function getLanguage() {
-            (localStorage.getItem('language') == null) ? localStorage.setItem('language', 'en') : false;
-            $.ajax({
-                url: '/language/' + localStorage.getItem('language') + '.json',
-                dataType: 'json', async: false, dataType: 'json',
-                success: function (lang) { language = lang; },
-                error: function (jqXHR, exception) {
-                    var msg = '';
-                    if (jqXHR.status === 0) {
-                        msg = 'Not connect.\n Verify Network.';
-                    } else if (jqXHR.status == 404) {
-                        msg = 'Requested page not found. [404]';
-                    } else if (jqXHR.status == 500) {
-                        msg = 'Internal Server Error [500].';
-                    } else if (exception === 'parsererror') {
-                        msg = 'Requested JSON parse failed.';
-                    } else if (exception === 'timeout') {
-                        msg = 'Time out error.';
-                    } else if (exception === 'abort') {
-                        msg = 'Ajax request aborted.';
-                    } else {
-                        msg = 'Uncaught Error.\n' + jqXHR.responseText;
-                    }
-                    //$('#post').html(msg);
-                    alert('error: ' + msg);
-                },
-            });
-        }
 
-        window.onload = function () {
-            getLanguage();
-        }
-
-        function setLanguage(lang) {
-
-            localStorage.setItem('language', lang);
-            $('#upLogoText').text(UTF8.decode(language.underLogoText));
-            //document.getElementById("upLogoText").innerHTML = underLogoText.date;
-            alert("Language: " + lang);
-        }
-        document.ready(function () {
-            $('#upLogoText').text(UTF8.decode(language.underLogoText));
-            //document.getElementById("upLogoText").innerHTML = underLogoText.date;
-            alert("OnReady change text.");
-        });
-    </script>
 </head>
 <body>
     <div class="upLogo">
@@ -96,59 +32,67 @@
         </div>
     </div>
     <p class="NameText"><b>My projects</b></p>
+    <div class="topShadow"></div>
     <div class="myProjects">
         <div class="sBlocks">
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    There is some text. So you can read this, or not. I don't care cuz it's just for test.
-                    So what i supposed to write over there? Nothing.
+            <div tabindex="0" data-yoffset="-10" style="--f-height: 300px;" class="sBlock">
+                <div class="sBlockUpSide">
+                    <p class="sBlockName">Still alive</p>
+                    <div class="sBlockImagesUp">
+                        <img class="sBlockSmallImage" src="images/CSharpLogo.png" height="25px">
+                        <img class="sBlockSmallImage" src="images/unityLogo.png" height="25px">
+                    </div>
+                    
+                </div>
+                <p class="sBlockText">
+                    Game with online implementation by using Photon network.<br>
+                    Destructible cars with real characteristics must fight for life, while staying in the zone.
+                    Zones move with each round and get smaller and smaller.
+                    Players are given some time to move to another zone.
+                    The player's goal is to prevent the enemy from entering the zone.<br><br>
+                    Created using: C#, Unity.
                 </p>
             </div>
             <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
-                </p>
-            </div>
-            <div tabindex="0" data-yoffset="-10" class="sBlock">
-                <p>
-                    It's second useless block, which was created only for testing this block!
+                <div class="sBlockUpSide">
+                    <p class="sBlockName">Python</p>
+                    <img class="sBlockSmallImage" src="images/pythonLogo.png" height="25px">
+                </div>
+                <p class="sBlockText">
+                    I don't know Python well, but created a couple of projects using this language.
                 </p>
             </div>
         </div>
     </div>
-    
+    <div class="bottomShadow"></div>
+    <p class="NameText"><b>My skills</b></p>
+    <div class="topShadow"></div>
+    <div class="myProjects">
+        <div class="sBlocks">
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <div class="sBlockUpSide">
+                    <p class="sBlockName" style="display: inline;white-space: nowrap;">Python</p>
+                    <img class="sBlockSmallImage" src="images/pythonLogo.png" height="25px">
+                </div>
+                <p class="sBlockText">
+                    I don't know Python well, but created a couple of projects using this language.
+                </p>
+            </div>
+            <div tabindex="0" data-yoffset="-10" class="sBlock">
+                <div class="sBlockUpSide">
+                    <p class="sBlockName" style="display: inline;white-space: nowrap;">Python</p>
+                    <img class="sBlockSmallImage" src="images/pythonLogo.png" height="25px">
+                </div>
+                <p class="sBlockText">
+                    I don't know Python well, but created a couple of projects using this language.
+                </p>
+            </div>
+        </div>
+    </div>
     <div class="bottomShadow"></div>
     <div class="footer">
         <p align="center">Just some text in the footer</p>
-        <a href="#" onclick="setLanguage('en')">English</a>
-        <a href="#" onclick="setLanguage('ru')">Russian</a>
     </div>
-    
+
 </body>
 </html>
