@@ -4,6 +4,11 @@
     amethyst2: hsl(257, 35%, 10%)
 */
 
+:root {
+    --mpos-x: 0;
+    --mpos-y: 0;
+}
+
 body {
     /*background-color: hsl(246, 36%, 7%);*/
     background-repeat: no-repeat;
@@ -18,6 +23,7 @@ body {
     overflow-x: hidden;
     font-family: 'Play', sans-serif;
     min-height: 100%;
+    background: radial-gradient(800px 800px at var(--x) var(--y), hsl(247, 5%, 12%), hsl(247, 5%, 10%));
     height: 100%;
 }
 
@@ -114,7 +120,8 @@ body {
     align-items:center;
     */
     width: 80%;
-    max-width: 75rem;
+    max-width: 1200px;
+    min-width: 360px;
     display: grid;
     gap: 10px;
     grid-auto-flow: dense;
@@ -123,13 +130,14 @@ body {
     grid-auto-rows: 260px;
     margin: auto;
     align-content: flex-end;
-    box-shadow: 2px 0px hsl(246, 36%, 30%), -2px 0px hsl(246, 36%, 30%);
+    box-shadow: 4px 0px 0px -2px hsl(246, 36%, 30%), -4px 0px 0px -2px hsl(246, 36%, 30%);
     /*perspective: 900px;*/
 }
 
 .pBlocks {
     width: calc(80% - 40px);
-    max-width: calc(75rem - 40px);
+    max-width: 1160px;
+    min-width: 360px;
     margin: auto;
     align-content: flex-end;
     box-shadow: 4px 0px 0px -2px hsl(246, 36%, 30%), -4px 0px 0px -2px hsl(246, 36%, 30%);

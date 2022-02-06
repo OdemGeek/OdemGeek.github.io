@@ -64,3 +64,22 @@ window.addEventListener('scroll',function (e) {
         el.className = 'helpPanelShown';
     }
 });
+
+var mx = 0;
+var my = 0;
+
+document.addEventListener('mousemove', e => {
+    mouseXpercentage = e.clientX + window.scrollX;
+    mouseYpercentage = e.clientY + window.scrollY;
+    mx = e.clientX;
+    my = e.clientY;
+    document.body.style.setProperty('--x', mouseXpercentage + "px");
+    document.body.style.setProperty('--y', mouseYpercentage + "px");
+});
+
+window.addEventListener('scroll', e => {
+    mouseXpercentage = mx + window.scrollX;
+    mouseYpercentage = my + window.scrollY;
+    document.body.style.setProperty('--x', mouseXpercentage + "px");
+    document.body.style.setProperty('--y', mouseYpercentage + "px");
+});
