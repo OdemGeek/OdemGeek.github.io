@@ -113,6 +113,7 @@ body {
     justify-content:space-around;
     align-items:center;
     */
+    width: 80%;
     max-width: 1200px;
     display: grid;
     gap: 10px;
@@ -125,6 +126,17 @@ body {
     box-shadow: 2px 0px hsl(246, 36%, 30%), -2px 0px hsl(246, 36%, 30%);
     /*perspective: 900px;*/
 }
+
+.pBlocks {
+    width: calc(80% - 40px);
+    max-width: 1160px;
+    margin: auto;
+    align-content: flex-end;
+    box-shadow: 2px 0px hsl(246, 36%, 30%), -2px 0px hsl(246, 36%, 30%);
+    padding: 20px;
+    text-align: center;
+}
+
 .sBlock:hover {
     overflow: hidden;
     background-color: hsl(246, 12%, 18%);
@@ -173,7 +185,7 @@ body {
 }
 
 .sBlock {
-    transform-origin: top center;
+    
     z-index: 0;
     overflow: hidden;
     justify-self: center;
@@ -241,6 +253,15 @@ span.ripple {
     background-color: hsla(256, 98%, 73%, 0.2);
 }
 
+span.rippleOut {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 600ms linear;
+    /*background-color: rgba(255, 255, 255, 0.2);*/
+    background-color: hsla(256, 98%, 73%, 0.2);
+}
+
 .bottomShadow {
     margin-top: 43px;
     min-height: 10px;
@@ -259,7 +280,7 @@ span.ripple {
     background-color: hsla(246, 0%, 0%, 0.2);
     clear: both;
     position: relative;
-    height: 120px;
+    height: 200px;
     margin: 0px;
     padding: 6px;
     /*margin-top: -200px;*/
@@ -267,7 +288,6 @@ span.ripple {
 
 #link {
     color: hsl(180, 78%, 48%);
-    float: right;
     cursor: pointer;
 }
 #link:hover {
