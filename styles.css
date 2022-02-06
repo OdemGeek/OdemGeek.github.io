@@ -100,21 +100,28 @@ body {
 .NameText:after {
     box-shadow: 0px 2px hsl(246, 36%, 30%);
 }
+#blockLine {
+    width: calc(100% + 40px);
+    transform: translateX(-20px);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    min-height: 2px;
+}
 
 .sBlocks {
     /*display: flex;
     justify-content:space-around;
     align-items:center;
     */
+    max-width: 1200px;
     display: grid;
     gap: 10px;
     grid-auto-flow: dense;
     grid-template-columns: repeat( auto-fit, minmax(350px, 1fr) );
     /*grid-gap: 10px;*/
     grid-auto-rows: 260px;
-    margin-left: 10px;
-    margin-right: 10px;
-    align-content:flex-end;
+    margin: auto;
+    align-content: flex-end;
 }
 .sBlock:hover {
     overflow: hidden;
@@ -160,7 +167,7 @@ body {
     content: "";
     background: linear-gradient(to top, hsla(246, 36%, 16%, 1) 0%, hsla(246, 36%, 16%, 0) 0% );
     pointer-events: none; /* so the text is still selectable */
-} 
+}
 
 .sBlock {
     z-index: 0;
@@ -180,12 +187,14 @@ body {
     transition: box-shadow 250ms ease-in-out, height 250ms ease-in-out, background-color 250ms ease-in-out, transform 250ms ease-in-out, color 250ms ease-in-out, border-radius 250ms ease-in-out, z-index 200ms ease-in-out;
     color: lightgray;
     flex-flow: column;
-}   
+}
 
 .sBlockName {
     font-size: 22px;
     margin-top: 0px;
     margin-bottom: 3px;
+    display: inline;
+    white-space: nowrap;
 }
 
 .sBlockImagesUp {
@@ -195,18 +204,23 @@ body {
 .sBlockSmallImage {
     transform: translateY(5px);
     margin-bottom: 0px;
+    margin-left: 8px;
     justify-self: center;
+    float: right;
+    transform: translateY(0px);
 }
 
 .sBlockText {
     font-size: 16px;
+    margin-top: 4px;
 }
-
 .sBlockUpSide {
     flex-flow: initial;
     align-self: center;
+    width: 100%;
 }
 
+    
 
 @keyframes ripple {
     to {
