@@ -20,6 +20,37 @@
     <title>Odem developer</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function () {
+            var pointer = document.getElementsByClassName("sBlock"),
+                pointerBox = pointer.getBoundingClientRect(),
+                centerPoint = window.getComputedStyle(pointer).transformOrigin,
+                centers = centerPoint.split(" ");
+
+            function rotatePointer(e) {
+                var pointerEvent = e;
+                if (e.targetTouches && e.targetTouches[0]) {
+                    e.preventDefault();
+                    pointerEvent = e.targetTouches[0];
+                    mouseX = pointerEvent.pageX;
+                    mouseY = pointerEvent.pageY;
+                } else {
+                    mouseX = e.clientX,
+                        mouseY = e.clientY;
+                }
+
+                var centerY = pointerBox.top + parseInt(centers[1]) - window.pageYOffset,
+                    centerX = pointerBox.left + parseInt(centers[0]) - window.pageXOffset,
+                    radians = Math.atan2(mouseX - centerX, mouseY - centerY),
+                    degrees = (radians * (180 / Math.PI) * -1) + 180;
+                pointer.style.transform = 'rotate(' + degrees + 'deg)';
+            }
+
+            window.addEventListener('mousemove', rotatePointer);
+            window.addEventListener('touchmove', rotatePointer);
+            window.addEventListener('touchstart', rotatePointer);
+        })
+    </script>
 
 </head>
 <body>
@@ -46,7 +77,7 @@
         <div class="sBlocks">
             <div tabindex="0" data-yoffset="-10" style="--f-height: 300px;" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">Still alive</p>
+                    <p class="sBlockName"><b>Still alive</b></p>
                     <img class="sBlockSmallImage" src="images/CSharpLogo.png" height="25px">
                     <img class="sBlockSmallImage" src="images/unityLogo.png" height="25px">
 
@@ -59,18 +90,19 @@
                     Players are given some time to move to another zone.
                     The player's goal is to prevent the enemy from entering the zone.<br><br>
                     Created using: C#, Unity.<br>
-                    <a href="html/StillAlive.html" id="link">Read more</a>
+                    <a href="html/StillAlive.html" id="link" style="transform: translateY(30px);">Read more</a>
                 </p>
             </div>
             <div tabindex="0" data-yoffset="-10" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">Which door</p>
+                    <p class="sBlockName"><b>Which door</b></p>
                     <img class="sBlockSmallImage" src="images/CSharpLogo.png" height="25px">
                     <img class="sBlockSmallImage" src="images/unityLogo.png" height="25px">
                 </div>
                 <div class="bottomShadow" id="blockLine"></div>
                 <p class="sBlockText">
                     Game made in two days on a dispute with a friend. Check how lucky you are.
+                    <a href="html/StillAlive.html" id="link" style="transform: translateY(100px);">Read more</a>
                 </p>
             </div>
         </div>
@@ -82,7 +114,7 @@
         <div class="sBlocks">
             <div tabindex="0" data-yoffset="-10" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">Python</p>
+                    <p class="sBlockName"><b>Python</b></p>
                     <img class="sBlockSmallImage" src="images/pythonLogo.png" height="25px">
                 </div>
                 <div class="bottomShadow" id="blockLine"></div>
@@ -94,7 +126,7 @@
             </div>
             <div tabindex="0" data-yoffset="-10" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">C#</p>
+                    <p class="sBlockName"><b>C#</b></p>
                     <img class="sBlockSmallImage" src="images/CSharpLogo.png" height="25px">
                 </div>
                 <div class="bottomShadow" id="blockLine"></div>
@@ -106,7 +138,7 @@
             </div>
             <div tabindex="0" data-yoffset="-10" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">Unity</p>
+                    <p class="sBlockName"><b>Unity</b></p>
                     <img class="sBlockSmallImage" src="images/unityLogo.png" height="25px">
                 </div>
                 <div class="bottomShadow" id="blockLine"></div>
@@ -119,7 +151,7 @@
             </div>
             <div tabindex="0" data-yoffset="-10" class="sBlock">
                 <div class="sBlockUpSide">
-                    <p class="sBlockName">CSS and HTML</p>
+                    <p class="sBlockName"><b>CSS and HTML</b></p>
                     <img class="sBlockSmallImage" src="images/CSSHTMLLogo.png" height="25px">
                 </div>
                 <div class="bottomShadow" id="blockLine"></div>
