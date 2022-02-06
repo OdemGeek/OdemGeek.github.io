@@ -114,7 +114,7 @@ body {
     align-items:center;
     */
     width: 80%;
-    max-width: 1200px;
+    max-width: 75rem;
     display: grid;
     gap: 10px;
     grid-auto-flow: dense;
@@ -129,10 +129,10 @@ body {
 
 .pBlocks {
     width: calc(80% - 40px);
-    max-width: 1160px;
+    max-width: calc(75rem - 40px);
     margin: auto;
     align-content: flex-end;
-    box-shadow: 2px 0px hsl(246, 36%, 30%), -2px 0px hsl(246, 36%, 30%);
+    box-shadow: 4px 0px 0px -2px hsl(246, 36%, 30%), -4px 0px 0px -2px hsl(246, 36%, 30%);
     padding: 20px;
     text-align: center;
 }
