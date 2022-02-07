@@ -83,3 +83,8 @@ window.addEventListener('scroll', e => {
     document.body.style.setProperty('--x', mouseXpercentage + "px");
     document.body.style.setProperty('--y', mouseYpercentage + "px");
 });
+
+window.addEventListener('load', e => {
+    document.body.style.setProperty('--x', 0 + "px");
+    document.body.style.setProperty('--y', 0 + "px");
+});
