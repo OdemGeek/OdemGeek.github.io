@@ -2,6 +2,8 @@
     maybe: #2c1e47
     amethyst: hsl(246, 36%, 7%)
     amethyst2: hsl(257, 35%, 10%)
+    hsl(231, 16%, 17%)
+    hsl(231, 16%, 14%)
 */
 
 :root {
@@ -14,7 +16,7 @@ body {
     background-repeat: no-repeat;
     /*background: hsl(246, 36%, 7%) -webkit-gradient(linear, left top, left bottom, color-stop(0, hsl(246, 36%, 20%)), color-stop(1, hsl(246, 36%, 7%))) no-repeat;*/
     /*background: hsl(246, 36%, 7%) linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
-    background: hsl(247, 5%, 10%);
+    /*background: hsl(247, 5%, 10%);*/
     /*background: linear-gradient(270deg, hsl(257, 5%, 10%), hsl(257, 5%, 10%));*/
     color: whitesmoke;
     padding: 0px;
@@ -23,7 +25,7 @@ body {
     overflow-x: hidden;
     font-family: 'Play', sans-serif;
     min-height: 100%;
-    background: radial-gradient(800px 800px at var(--x) var(--y), hsl(247, 5%, 12%), hsl(247, 5%, 10%));
+    background: radial-gradient(800px 800px at var(--x) var(--y), hsl(231, 16%, 15%), hsl(231, 16%, 14%));
     height: 100%;
 }
 
@@ -147,7 +149,7 @@ body {
 
 .sBlock:hover {
     overflow: hidden;
-    background-color: hsl(246, 12%, 18%);
+    background-color: hsl(231, 16%, 20%);
     /*background: linear-gradient(to bottom, hsl(246, 36%, 22%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     cursor: pointer;
     color: whitesmoke;
@@ -176,7 +178,7 @@ body {
     height: 100%;
     width: 100%;
     content: "";
-    background: linear-gradient(to top, hsla(256, 5%, 16%, 1) 5%, hsla(256, 5%, 16%, 0) 50% );
+    background: linear-gradient(to top, hsla(231, 16%, 17%, 1) 5%, hsla(231, 16%, 17%, 0) 50% );
     pointer-events: none; /* so the text is still selectable */
 }
 
@@ -188,12 +190,11 @@ body {
     height: 100%;
     width: 100%;
     content: "";
-    background: linear-gradient(to top, hsla(246, 36%, 16%, 1) 0%, hsla(246, 36%, 16%, 0) 0% );
+    background: linear-gradient(to top, hsla(231, 16%, 17%, 1) 0%, hsla(231, 16%, 17%, 0) 0% );
     pointer-events: none; /* so the text is still selectable */
 }
 
 .sBlock {
-    
     z-index: 0;
     overflow: hidden;
     justify-self: center;
@@ -203,7 +204,7 @@ body {
     display: flex;
     /*background: linear-gradient(to bottom, hsl(246, 36%, 15%) -10px, hsl(246, 36%, 7%) 250px) no-repeat;*/
     /*background-color: hsl(246, 36%, 16%);*/
-    background-color: hsl(256, 5%, 16%);
+    background-color: hsl(231, 16%, 17%);
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     padding: 20px;
