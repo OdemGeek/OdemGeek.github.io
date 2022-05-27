@@ -25,7 +25,7 @@ body {
     overflow-x: hidden;
     font-family: 'Play', sans-serif;
     min-height: 100%;
-    background: radial-gradient(800px 800px at var(--x) var(--y), hsl(231, 16%, 15%), hsl(231, 16%, 14%));
+    background: radial-gradient(800px 800px at var(--x) var(--y), hsl(231, 16%, 12%), hsl(231, 16%, 11%));
     height: 100%;
 }
 
